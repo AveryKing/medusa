@@ -94,7 +94,18 @@ const Post = ({post}: Props) => {
                         className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500'
                               placeholder="Comment" rows={8}/>
                 </label>
+                <div className='flex flex-col p-5'>
+                    {errors.name && (
+                        <span className='text-red-500'> - The name field is required</span>
+                    )}
+                     {errors.comment && (
+                        <span className='text-red-500'> - The comment field is required</span>
+                    )}
+                     {errors.email && (
+                        <span className='text-red-500'> - The email field is required</span>
+                    )}
 
+                </div>
             </form>
         </main>
     );
