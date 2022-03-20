@@ -1,18 +1,21 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link';
 import Header from "../components/Header";
 import {sanityClient, urlFor} from '../sanity';
+import {Post} from "../typings";
 
-interface props {
+interface Props {
     posts: Post[];
 }
-const Home: NextPage = (props: Props) => {
+
+const Home = ({posts}: Props) => {
+    console.log(posts);
     return (
         <div className='max-w-7xl mx-auto'>
             <Head>
                 <title>Medusa</title>
-                <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Header/>
             <div className='flex justify-between items-center bg-yellow-400 border-y border-black py-10 lg:py-0'>
@@ -27,11 +30,21 @@ const Home: NextPage = (props: Props) => {
                      alt="Medusa"/>
             </div>
             { /* Posts */}
+            <div>
+                {posts.map(post => (
+                    <Link key={post._id} href={`/post/${post.slug.current}`}>
+                        <div>
+                            <h1>I am a post</h1>
+                        </div>
+                    </Link>
+                ))}
+            </div>
         </div>
     )
 }
 
-export default Home
+export default Home;
+
 
 export const getServerSideProps = async () => {
     const query = `*[_type == "post"] {
