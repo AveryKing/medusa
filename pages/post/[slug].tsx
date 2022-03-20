@@ -4,6 +4,7 @@ import {sanityClient, urlFor} from "../../sanity";
 import {Post} from "../../typings";
 import {GetStaticProps} from "next";
 import PortableText from 'react-portable-text';
+import {useForm, SubmitHandler} from "react-hook-form";
 
 interface Props {
     post: Post;
@@ -11,6 +12,7 @@ interface Props {
 
 const Post = ({post}: Props) => {
 
+    const { register, handleSubmit, formState: {errors} } = useForm();
     return (
         <main>
             <Header/>
