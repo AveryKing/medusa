@@ -104,8 +104,8 @@ const Post = ({post}: Props) => {
                      {errors.email && (
                         <span className='text-red-500'> - The email field is required</span>
                     )}
-
                 </div>
+                <input type='submit' value="Submit" className='shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer'/>
             </form>
         </main>
     );
