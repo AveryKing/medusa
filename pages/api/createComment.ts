@@ -26,6 +26,8 @@ export default async function createComment(
             email,
             comment
         })
+    } catch (err) {
+        res.status(500).json({message: `Error submitting comment: ${err}`})
     }
-    res.status(200).json({ name: 'John Doe' })
+    res.status(200).json({ message: 'Comment submitted' })
 }
