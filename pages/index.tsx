@@ -18,15 +18,14 @@ const Home = ({posts}: Props) => {
                 <title>Medusa</title>
             </Head>
             <Header/>
-            <div className='flex justify-between items-center bg-yellow-400 border-y border-black py-10 lg:py-0'>
+            <div className='flex justify-between  items-center bg-blend-lighten  py-10 lg:py-0'>
                 <div className='px-10 space-y-5'>
-                    <h1 className='text-6xl max-w-xl font-serif'><span
-                        className='underline decoration-black decoration-4'>Medium</span> is a place to write, read, and
-                        connect.</h1>
-                    <h2>It's easy and free to post your thinking on any topic and connect with millions of readers.</h2>
+                    <h1 className='text-6xl max-w-xl '><span
+                        className='underline decoration-black decoration-4'>Medusa</span> is a place to share, learn, and connect.</h1>
+                    <h2>Join today to start posting and sharing your thoughts with our readers.</h2>
                 </div>
-                <img className='hidden md:inline-flex h-32 lg:h-full'
-                     src="https://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png"
+                <img className='hidden md:inline-flex w-80 mr-20 lg:w-5/12 object-contain'
+                     src="svg.svg"
                      alt="Medusa"/>
             </div>
             { /* Posts */}
