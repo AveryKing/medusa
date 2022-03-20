@@ -10,9 +10,16 @@ interface Props {
     post: Post;
 }
 
+interface IFormInput {
+    _id: string;
+    name: string;
+    email: string;
+    comment: string;
+}
+
 const Post = ({post}: Props) => {
 
-    const { register, handleSubmit, formState: {errors} } = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm();
     return (
         <main>
             <Header/>
@@ -32,47 +39,50 @@ const Post = ({post}: Props) => {
 
                     </p>
                 </div>
-                    <div className="mt-10">
-                        <PortableText
-                            className=""
-                            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-                            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-                            content={post.body}
-                            serializers={{
-                                h1: (props: any) => (
-                                    <h1 className="text-2xl font-bold my-5" {...props} />
-                                ),
-                                h2: (props: any) => (
-                                    <h1 className="text-xl font-bold my-5" {...props} />
-                                ),
-                                li: ({children}:any) => (
-                                    <li className="ml-4 list-disc">{children}</li>
-                                ),
-                                link: ({href,children}:any) => (
-                                    <a className="text-blue-500 hover:underline">{children}</a>
-                                )
-                            }}
-                        />
-                    </div>
+                <div className="mt-10">
+                    <PortableText
+                        className=""
+                        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+                        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+                        content={post.body}
+                        serializers={{
+                            h1: (props: any) => (
+                                <h1 className="text-2xl font-bold my-5" {...props} />
+                            ),
+                            h2: (props: any) => (
+                                <h1 className="text-xl font-bold my-5" {...props} />
+                            ),
+                            li: ({children}: any) => (
+                                <li className="ml-4 list-disc">{children}</li>
+                            ),
+                            link: ({href, children}: any) => (
+                                <a className="text-blue-500 hover:underline">{children}</a>
+                            )
+                        }}
+                    />
+                </div>
 
             </article>
             <hr className="max-w-lg my-5 mx-auto border border-blue-500"/>
             <form className="flex flex-col p-5 my-10 max-w-2xl mx-auto mb-10">
-               <h3 className="text-sm text-blue-500">Enjoyed this article?</h3>
-               <h4 className="text-3xl font-bold">Leave a comment below!</h4>
-                <hr className="py-3 mt-2" />
+                <h3 className="text-sm text-blue-500">Enjoyed this article?</h3>
+                <h4 className="text-3xl font-bold">Leave a comment below!</h4>
+                <hr className="py-3 mt-2"/>
 
                 <label className='block mb-5'>
                     <span className='text-gray-700'>Name</span>
-                    <input className='shadow border rounded py-2 px-3  mt-1 block w-full ring-blue-500' placeholder="Name" type="text"/>
+                    <input className='shadow border rounded py-2 px-3  mt-1 block w-full ring-blue-500'
+                           placeholder="Name" type="text"/>
                 </label>
-                 <label className='block mb-5'>
+                <label className='block mb-5'>
                     <span className='text-gray-700'>Email</span>
-                    <input className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500' placeholder="Email" type="text"/>
+                    <input className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500'
+                           placeholder="Email" type="text"/>
                 </label>
-                 <label className='block mb-5'>
+                <label className='block mb-5'>
                     <span className='text-gray-700'>Comment</span>
-                    <textarea className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500' placeholder="Comment" rows={8} />
+                    <textarea className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500'
+                              placeholder="Comment" rows={8}/>
                 </label>
 
             </form>
