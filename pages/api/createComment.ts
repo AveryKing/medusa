@@ -1,9 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-
-type Data = {
-    name: string
-}
+ const config = {
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    token: process.env.SANITY_API_TOKEN,
+    useCdn: process.env.NODE_ENV === "production"
+};
 
 export default function createComment(
     req: NextApiRequest,
