@@ -89,7 +89,7 @@ const Post = ({post}: Props) => {
                     <input
                         {...register("email", {required:true})}
                         className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500'
-                           placeholder="Email" type="text"/>
+                           placeholder="Email" type="email"/>
                 </label>
                 <label className='block mb-5'>
                     <span className='text-gray-700'>Comment</span>
