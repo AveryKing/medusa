@@ -19,7 +19,7 @@ interface IFormInput {
 
 const Post = ({post}: Props) => {
 
-    const {register, handleSubmit, formState: {errors}} = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm<IFormInput>();
     return (
         <main>
             <Header/>
