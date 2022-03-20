@@ -127,6 +127,16 @@ const Post = ({post}: Props) => {
                     <input type='submit' value="Submit" className='shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer'/>
                 </form>
             )}
+            {/* Comments */}
+            <div className='flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-blue-500 shadow space-y-2'>
+                <h3 className='text-4xl'>Comments</h3>
+                <hr className='pb-2' />
+                {post.comments.map((comment) => (
+                    <div key={comment._id}>
+                        <p><span className='text-blue-500'>{comment.name}: </span>{comment.comment}</p>
+                    </div>
+                ))}
+            </div>
 
         </main>
     );
