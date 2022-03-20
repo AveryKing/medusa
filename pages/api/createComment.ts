@@ -1,11 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
- const config = {
+ import sanityClient from '@sanity/client';
+const config = {
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     token: process.env.SANITY_API_TOKEN,
     useCdn: process.env.NODE_ENV === "production"
 };
+
+const client = sanityClient(config);
 
 export default function createComment(
     req: NextApiRequest,
