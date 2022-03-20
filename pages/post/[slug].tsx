@@ -29,6 +29,7 @@ const Post = ({post}: Props) => {
                         at {new Date(post._createdAt).toLocaleString()}
 
                     </p>
+                </div>
                     <div>
                         <PortableText
                             className=""
@@ -51,7 +52,7 @@ const Post = ({post}: Props) => {
                             }}
                         />
                     </div>
-                </div>
+                
             </article>
         </main>
     );
