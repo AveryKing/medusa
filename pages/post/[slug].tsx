@@ -75,17 +75,23 @@ const Post = ({post}: Props) => {
                     />
                 <label className='block mb-5'>
                     <span className='text-gray-700'>Name</span>
-                    <input className='shadow border rounded py-2 px-3  mt-1 block w-full ring-blue-500'
+                    <input
+                        {...register("name", {required:true})}
+                        className='shadow border rounded py-2 px-3  mt-1 block w-full ring-blue-500'
                            placeholder="Name" type="text"/>
                 </label>
                 <label className='block mb-5'>
                     <span className='text-gray-700'>Email</span>
-                    <input className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500'
+                    <input
+                        {...register("email", {required:true})}
+                        className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500'
                            placeholder="Email" type="text"/>
                 </label>
                 <label className='block mb-5'>
                     <span className='text-gray-700'>Comment</span>
-                    <textarea className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500'
+                    <textarea
+                        {...register("comment", {required:true})}
+                        className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-blue-500'
                               placeholder="Comment" rows={8}/>
                 </label>
 
