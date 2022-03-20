@@ -30,7 +30,7 @@ const Post = ({post}: Props) => {
 
                     </p>
                 </div>
-                    <div>
+                    <div className="mt-10">
                         <PortableText
                             className=""
                             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
@@ -52,7 +52,7 @@ const Post = ({post}: Props) => {
                             }}
                         />
                     </div>
-                
+
             </article>
         </main>
     );
