@@ -18,13 +18,13 @@ const Home = ({posts}: Props) => {
                 <title>Medusa</title>
             </Head>
             <Header/>
-            <div className='flex justify-between  items-center bg-blend-lighten  py-10 lg:py-0'>
+            <div className='flex justify-between  items-center bg-blue-50  py-10 lg:py-0'>
                 <div className='px-10 space-y-5'>
                     <h1 className='text-6xl max-w-xl '><span
                         className='underline decoration-black decoration-4'>Medusa</span> is a place to share, learn, and connect.</h1>
                     <h2>Join today to start posting and sharing your thoughts with our readers.</h2>
                 </div>
-                <img className='hidden md:inline-flex w-80 mr-20 lg:w-5/12 object-contain'
+                <img className='hidden md:inline-flex w-80 mr-20 lg:w-4/12 object-contain'
                      src="svg.svg"
                      alt="Medusa"/>
             </div>
